@@ -1,0 +1,10 @@
+mixin storeForm()
+    .w-100.ph5.pv4.ba.shadow-4.b--light-gray
+        form.f5(action='/add', method='POST')
+            label.db(for='name') Name
+            input.db.mb4.w-40.pa2(type='text', name='name')
+            label.db(for='description') Description
+            textarea.db.mb4.w-40.pa2(name='description')
+            label.db(for='tags') Tags
+            input.db.mb4.w-40.pa2(type='text', name='tags', placeholder='Burgers, beer, lunch...')
+            button.db.pa3.pointer.w-100.b.br3(type='submit' value='Save') Save

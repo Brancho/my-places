@@ -1,7 +1,8 @@
-extends layout
+extends header
 
 block content
-  .inner
-    h2= status
-    p= message
+  .inner.tc
+    h2.f1= status
+    p.f2= message
+    a.link.black.dim.f3(href='/') Go back to home!
   pre.error!= stackHighlighted

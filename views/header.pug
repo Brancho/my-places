@@ -1,0 +1,24 @@
+doctype html
+html
+head
+    title= `${title} | ${h.siteName}`
+    link(rel='stylesheet', href='https://unpkg.com/tachyons/css/tachyons.min.css')
+    link(rel='stylesheet', href='/dist/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+body
+    header.bg-dark-gray.pv3
+        div.inner
+            h1.white.f2.ma0.pt2.dib.mr6
+                a.link.white(href='/') My Places
+            a.link.white.dim.f5.mr4(href='/stores') Stores
+            a.link.white.dim.f5.mr4(href='/tags') Tags
+            a.link.white.dim.f5.mr4(href='/top') Top
+            a.link.white.dim.f5.mr4(href='/add') Add
+            a.link.white.dim.f5(href='/map') Map
+
+
+    block content
+
+    block scripts
+        script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
+        script(src="/dist/App.bundle.js")

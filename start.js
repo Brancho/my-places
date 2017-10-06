@@ -9,6 +9,9 @@ mongoose.connection.on('error', (err) => {
   console.error(`Errorrrr → ${err.message}`);
 });
 
+require('./models/Store');
+
+
 const app = require('./app');
 app.set('port', process.env.PORT || 7777);
 const server = app.listen(app.get('port'), () => {
