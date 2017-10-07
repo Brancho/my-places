@@ -1,0 +1,9 @@
+extends header
+include  mixins/_storeCard
+
+block content
+    .inner
+        h2.f2= title
+        .flex.flex-wrap.justify-between
+            each store in stores
+                +storeCard(store)
