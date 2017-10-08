@@ -9,6 +9,9 @@
   max-width: 1200px;
   margin: 0 auto; }
 
+.store__hero img {
+  object-fit: cover; }
+
 .store__hero:before {
   display: block;
   content: '';
@@ -19,5 +22,11 @@
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1; }
+
+.store__action {
+  font-size: 10px; }
+  .store__action svg {
+    width: 25px;
+    fill: white; }
 
 /*# sourceMappingURL=style.css.map*/

@@ -1,4 +1,8 @@
-.store__hero:before {
+.store__hero{
+  img{
+    object-fit: cover;
+  }
+&:before {
     display: block;
     content: '';
     position: absolute;
@@ -9,3 +13,12 @@
     background: rgba(0,0,0,0.5);
     z-index: 1;
   }
+}
+
+.store__action {
+  font-size: 10px;
+  svg {
+    width: 25px;
+    fill: white
+  }
+}

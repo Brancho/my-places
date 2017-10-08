@@ -1,10 +1,11 @@
-mixin storeForm()
+mixin storeForm(store = {})
     .w-100.ph5.pv4.ba.shadow-4.b--light-gray
-        form.f5(action='/add', method='POST')
+        form.f5(action=`/add/${store._id || ''}`, method='POST')
             label.db(for='name') Name
-            input.db.mb4.w-40.pa2(type='text', name='name')
+            input.db.mb4.w-40.pa2(type='text', name='name' value=store.name)
             label.db(for='description') Description
-            textarea.db.mb4.w-40.pa2(name='description')
+            textarea.db.mb4.w-40.pa2(name='description')= store.description
             label.db(for='tags') Tags
-            input.db.mb4.w-40.pa2(type='text', name='tags', placeholder='Burgers, beer, lunch...')
+            - const tags = store.tags ? store.tags.join(', ') : ''
+            input.db.mb4.w-40.pa2(type='text', name='tags', placeholder='Burgers, beer, lunch...' value=tags)
             button.db.pa3.pointer.w-100.b.br3(type='submit' value='Save') Save

@@ -2,9 +2,13 @@ mixin storeCard(store = {})
 
     .mv3.shadow-4.w-30
         .store__hero.tr.pa3.relative
-            img.w-100.h-100.absolute.top-0.left-0.right-0.cover(src=`/uploads/${store.photo || 'store.png'}`)
+            .z-2.relative.flex.white.mb5.items-center.justify-around
+                .store__action
+                    a(href=`stores/${store._id}/edit`)
+                        != h.icon('pencil')
+            img.w-100.h-100.absolute.top-0.left-0.right-0(src=`/uploads/${store.photo || 'store.png'}`)
             h2.title.z-2.ma0.relative.f2
-                a.link.black.pa2.pb1(href=`/store/${store.slug}`) #{store.name.toUpperCase()}
+                a.link.black.pt1(href=`/store/${store.slug}`) #{store.name.toUpperCase()}
         .pa3
             - const text = store.description.split(' ')
             p.f5.ma0.di= text.slice(0, 25).join(' ')
