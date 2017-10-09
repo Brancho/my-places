@@ -1,5 +1,20 @@
 const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
+const multer = require('multer');
+
+const multerOptions = {
+  storage: multer.memoryStorage(),
+  fileFilter(req, file, next){
+    const isPhoto = file.mimetype.startsWith('image/');
+    if(isPhoto){
+      next(null, true);
+    } else {
+      next({ message: 'That ffile type is not alowed!' }, false);
+    }
+  }
+};
+
+exports.upload = multer(multerOptions).single('photo');
 
 exports.addStore = (req, res) => {
   res.render('editStore', { title: 'ADD STORE' })
@@ -25,6 +40,7 @@ exports.editStore = async (req, res) => {
 
 exports.updateStore = async (req, res) => {
   req.body.tags = trimTags(req.body.tags);
+  req.body.location.type = 'Point';
   const store = await Store.findOneAndUpdate({ _id: req.params.id }, req.body, {
     new: true,
     runValidators: true
