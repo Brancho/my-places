@@ -13,4 +13,6 @@ mixin storeForm(store = {})
             - const tags = store.tags ? store.tags.join(', ') : ''
             input.db.mb4.w-40.pa2(type='text', name='tags', placeholder='Burgers, beer, lunch...' value=tags)
             input.db.mb4.w-40.pa2(type='file', name='photo', id='photo', accept='image/gif, image/png, image/jpeg')
+            if store.photo
+                img(src=`/uploads/${store.photo}`, alt=store.name width=300)
             button.db.pa3.pointer.w-100.b.br3(type='submit' value='Save') Save
