@@ -1,0 +1,8 @@
+extends header
+
+block content
+    .inner
+        h2.f2 #{tag || 'TAGS'}
+        each t in tags
+            a.mr4(href=`/tags/${t._id}`) ##{t._id}
+                span= ' ' + t.count
