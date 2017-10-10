@@ -1,0 +1,14 @@
+extends header
+
+block content
+    .store__hero.relative.main
+        img.hero.w-100.h-100(src=`/uploads/${store.photo || 'store.png'}`)
+    h2.tc.f1.absolute.left-0.right-0.z-5.title.title_main
+        a.link.black.pa2.pb0(href='#')= store.name.toUpperCase()
+    .inner
+        img(src=h.staticMap(store.location.coordinates))
+        p= store.location.address
+        p= store.description
+        if store.tags
+            each tag in store.tags
+                a.mr4(href=`/tags/${tag}`) ##{tag}
