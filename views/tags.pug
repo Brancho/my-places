@@ -1,4 +1,5 @@
 extends header
+include  mixins/_storeCard
 
 block content
     .inner
@@ -6,3 +7,8 @@ block content
         each t in tags
             a.mr4(href=`/tags/${t._id}`) ##{t._id}
                 span= ' ' + t.count
+        .flex.flex-wrap.justify-between
+            each store in stores
+                +storeCard(store)
+
+

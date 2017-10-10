@@ -35,4 +35,31 @@
     width: 25px;
     fill: white; }
 
+input:not([type='file']), textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid grey; }
+  input:not([type='file']).input--error, textarea.input--error {
+    border-color: red; }
+
+label {
+  padding: 10px 0;
+  display: block; }
+
+.form {
+  background: white;
+  padding: 2rem; }
+  .form + .form {
+    margin-top: 4rem; }
+  .form h2 {
+    margin: 0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid grey; }
+  .form .button {
+    border: 0;
+    background: #FFC40E;
+    color: black;
+    font-weight: 600; }
+
 /*# sourceMappingURL=style.css.map*/

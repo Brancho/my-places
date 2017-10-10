@@ -1,18 +1,17 @@
 mixin storeForm(store = {})
-    .w-100.ph5.pv4.ba.shadow-4.b--light-gray
-        form.f5(action=`/add/${store._id || ''}`, method='POST' enctype='multipart/form-data')
-            label.db(for='name') Name
-            input.db.mb4.w-40.pa2(type='text', name='name' value=store.name)
-            label.db(for='address') Address
-            input.db.mb4.w-40.pa2( type='text', id='address' name='location[address]' value=(store.location && store.location.address) )
-            input.db.mb4.w-40.pa2( type='hidden', id='lng' name='location[coordinates][0]' value=(store.location && store.location.coordinates[0]) required)
-            input.db.mb4.w-40.pa2( type='hidden', id='lat' name='location[coordinates][1]' value=(store.location && store.location.coordinates[0]) required)
-            label.db(for='description') Description
-            textarea.db.mb4.w-40.pa2(name='description')= store.description
-            label.db(for='tags') Tags
+        form.form.shadow-2.mb4(action=`/add/${store._id || ''}`, method='POST' enctype='multipart/form-data')
+            label(for='name') Name
+            input(type='text', name='name' value=store.name)
+            label(for='address') Address
+            input( type='text', id='address' name='location[address]' value=(store.location && store.location.address) )
+            input( type='hidden', id='lng' name='location[coordinates][0]' value=(store.location && store.location.coordinates[0]) required)
+            input( type='hidden', id='lat' name='location[coordinates][1]' value=(store.location && store.location.coordinates[0]) required)
+            label(for='description') Description
+            textarea(name='description')= store.description
+            label(for='tags') Tags
             - const tags = store.tags ? store.tags.join(', ') : ''
-            input.db.mb4.w-40.pa2(type='text', name='tags', placeholder='Burgers, beer, lunch...' value=tags)
-            input.db.mb4.w-40.pa2(type='file', name='photo', id='photo', accept='image/gif, image/png, image/jpeg')
+            input(type='text', name='tags', placeholder='Burgers, beer, lunch...' value=tags)
+            input.mt3(type='file', name='photo', id='photo', accept='image/gif, image/png, image/jpeg')
             if store.photo
-                img(src=`/uploads/${store.photo}`, alt=store.name width=300)
-            button.db.pa3.pointer.w-100.b.br3(type='submit' value='Save') Save
+                img.mt3(src=`/uploads/${store.photo}`, alt=store.name width=300)
+            input.button.mt3.pointer(type='submit', value='Save')

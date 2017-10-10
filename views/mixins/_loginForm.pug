@@ -1,0 +1,9 @@
+mixin loginForm()
+
+    form.form.shadow-2(action='/login' method='POST')
+        h2 Login
+        label(for='email') Email
+        input(type='email', name='email')
+        label(for='password') Password
+        input(type='password', name='password')
+        input.button.mt3.pointer(type='submit', value='Log In')
