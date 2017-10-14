@@ -25,6 +25,23 @@ exports.login = passport.authenticate('local', {
   successFlash: 'You are now logged in!'
 });
 
+exports.logout = (req, res) => {
+  req.logout();
+  req.flash('success', 'You are now logged out!');
+  res.redirect('/');
+};
+
+exports.isLoggedIn = (req, res, next) => {
+  if(req.isAuthenticated()){
+    next();
+    return;
+  }
+  else {
+    req.flash('error', 'Ooops, you must be logged in to do that!');
+    res.redirect('/login');
+  }
+};
+
 exports.validateRegister = (req, res, next) => {
   req.sanitizeBody('name');
   req.checkBody('name', 'You must supply a name!').notEmpty();
@@ -45,5 +62,25 @@ exports.validateRegister = (req, res, next) => {
     return;
   }
   next();
+};
+
+exports.account = (req, res) => {
+  res.render('account', { title: 'Edit account' });
+};
+
+exports.updateAccount = async (req, res) => {
+  const updates = {
+    name: req.body.name,
+    email: req.body.email
+  };
+
+  const user = await User.findOneAndUpdate(
+    { _id: req.user._id },
+    { $set: updates },
+    { new: true, runValidators: true, context: 'query' }
+    );
+  req.login(user);
+  req.flash('success', 'Account successfully updated');
+  res.redirect('back');
 };
 

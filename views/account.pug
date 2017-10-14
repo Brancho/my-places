@@ -1,0 +1,11 @@
+extends header
+
+block content
+    .inner
+        h2.f2 Edit account
+        form.form.shadow-2(action='/account' method='POST')
+            label(for='name') Name
+            input(type='name', name='name' value=user.name)
+            label(for='email') Email
+            input(type='email', name='email' value=user.email)
+            input.button.mt3.pointer(type='submit', value='Update my account')

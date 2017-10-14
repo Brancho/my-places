@@ -63,37 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(0);
-
-var _autocomplete = __webpack_require__(8);
-
-var _autocomplete2 = _interopRequireDefault(_autocomplete);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _autocomplete2.default)(document.getElementById('address'), document.getElementById('lat'), document.getElementById('lng'));
-
-/***/ }),
-
-/***/ 8:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -117,7 +91,29 @@ function autocomplete(input, latInput, lngInput) {
 }
 exports.default = autocomplete;
 
-/***/ })
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
 
-/******/ });
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(1);
+
+var _autocomplete = __webpack_require__(0);
+
+var _autocomplete2 = _interopRequireDefault(_autocomplete);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _autocomplete2.default)(document.getElementById('address'), document.getElementById('lat'), document.getElementById('lng'));
+
+/***/ })
+/******/ ]);
 //# sourceMappingURL=App.bundle.js.map

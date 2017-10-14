@@ -7,16 +7,24 @@ head
     meta(name="viewport" content="width=device-width, initial-scale=1")
 body
     header.bg-dark-gray.pv3
-        div.inner
+        .inner.flex.justify-between
             h1.white.f2.ma0.pt2.dib.mr6
                 a.link.white(href='/') My Places
-            a.link.white.dim.f5.mr4(href='/stores') Stores
-            a.link.white.dim.f5.mr4(href='/tags') Tags
-            a.link.white.dim.f5.mr4(href='/top') Top
-            a.link.white.dim.f5.mr4(href='/add') Add
-            a.link.white.dim.f5.mr4(href='/map') Map
-            a.link.white.dim.f5.mr4(href='/login') Login
-            a.link.white.dim.f5(href='/register') Register
+            div.pt3
+                a.link.white.dim.f5.mr4(href='/stores') Stores
+                a.link.white.dim.f5.mr4(href='/tags') Tags
+                a.link.white.dim.f5.mr4(href='/top') Top
+                a.link.white.dim.f5.mr4(href='/map') Map
+            div(class=`${!user ? 'pt3' : ''}`)
+                if !user
+                    a.link.white.dim.f5.mr4(href='/login') Login
+                    a.link.white.dim.f5.mr4(href='/register') Register
+                else
+                    a.link.white.dim.f5.mr4(href='/add') Add
+                    a.link.white.dim.f5.mr4(href='/logout') Log out
+                    a(href='/account').black
+                        .br-100.bg-yellow.dib.ph3.pt2.pb1
+                            span.f3.b= user.name.slice(0,1).toUpperCase()
     block messages
         if locals.flashes
             .inner
