@@ -8,17 +8,16 @@ head
 body
     header.bg-dark-gray.pv3
         .inner.flex.justify-between
-            h1.white.f2.ma0.pt2.dib.mr6
+            h1.white.f2.ma0.pt2.dib
                 a.link.white(href='/') My Places
             div.pt3
                 a.link.white.dim.f5.mr4(href='/stores') Stores
                 a.link.white.dim.f5.mr4(href='/tags') Tags
-                a.link.white.dim.f5.mr4(href='/top') Top
-                a.link.white.dim.f5.mr4(href='/map') Map
+                a.link.white.dim.f5(href='/map') Map
             div(class=`${!user ? 'pt3' : ''}`)
                 if !user
                     a.link.white.dim.f5.mr4(href='/login') Login
-                    a.link.white.dim.f5.mr4(href='/register') Register
+                    a.link.white.dim.f5(href='/register') Register
                 else
                     a.link.white.dim.f5.mr4(href='/add') Add
                     a.link.white.dim.f5.mr4(href='/logout') Log out

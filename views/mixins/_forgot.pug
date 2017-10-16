@@ -1,0 +1,7 @@
+mixin forgotForm()
+
+    form.form.shadow-2(action='/account/forgot' method='POST')
+        h2 I FORGOT MY PASSWORD
+        label(for='email') Email
+        input(type='email', name='email')
+        input.button.mt3.pointer(type='submit', value='Send a reset')

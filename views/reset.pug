@@ -1,0 +1,11 @@
+extends header
+
+block content
+    .inner.pt4
+        form.form.shadow-2(method='POST')
+            h2= title
+            label(for='password') Password
+            input(type='password', name='password')
+            label(for='password-confirm') Confirm Password
+            input(type='password', name='password-confirm')
+            input.button.mt3.pointer(type='submit', value='Reset password')
