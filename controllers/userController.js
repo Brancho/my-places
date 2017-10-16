@@ -87,7 +87,7 @@ exports.updateAccount = async (req, res) => {
 };
 
 exports.forgot = async (req, res) => {
-  const user = await User.findOne({email: req.body.email})
+  const user = await User.findOne({email: req.body.email});
   if (!user) {
     req.flash('error', 'No account with that email exists!');
     return res.redirect('/login');

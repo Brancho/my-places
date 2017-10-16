@@ -33,6 +33,7 @@ exports.addStore = (req, res) => {
 };
 
 exports.createStore = async (req, res) => {
+  req.body.author = req.user._id;
   req.body.tags = trimTags(req.body.tags);
   const store = await(new Store(req.body)).save();
   req.flash('success', `Successfully created ${store.name}. Care to leave a review?`);
@@ -44,8 +45,15 @@ exports.getStores = async (req, res) => {
   res.render('stores', { title: 'STORES', stores })
 };
 
+const confirmOwner = (store, user) => {
+  if(!store.author.equals(user._id)){
+    throw Error('You must order a store in order to edit it!')
+  }
+}
+
 exports.editStore = async (req, res) => {
   const store = await Store.findOne({ _id: req.params.id });
+  confirmOwner(store, req.user);
   res.render('editStore', { title: `EDIT ${store.name.toUpperCase()}`, store })
 };
 
@@ -76,10 +84,6 @@ exports.getStoresByTag = async (req, res) => {
   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
   res.render('tags', {tags, tag, stores, title: 'Tags'});
 };
-
-
-
-
 
 function trimTags(tags){
   return tags.split(',').map(function(tag) {
