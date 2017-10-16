@@ -1,0 +1,18 @@
+.search {
+  position: relative;
+  &__results {
+    background: white;
+    position: absolute;
+    width: 100%;
+  }
+  &__input {
+    background: none;
+    color: white;
+    outline: 0;
+  }
+  &__result {
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #ececec;
+  }
+}

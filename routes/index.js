@@ -30,4 +30,6 @@ router.post('/account/forgot', catchErrors(userController.forgot));
 router.get('/account/reset/:token', catchErrors(userController.reset));
 router.post('/account/reset/:token', userController.confirmedPasswords, catchErrors(userController.update));
 
+router.get('/api/search', catchErrors(storeController.searchStores));
+
 module.exports = router;

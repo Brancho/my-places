@@ -24,6 +24,10 @@ body
                     a(href='/account').black
                         .br-100.bg-yellow.dib.ph3.pt2.pb1
                             span.f3.b= user.name.slice(0,1).toUpperCase()
+        .search
+            input.search__input(type="text" placeholder="Coffee, beer..." name="search")
+            .search__results
+
     block messages
         if locals.flashes
             .inner

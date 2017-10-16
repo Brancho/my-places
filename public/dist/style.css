@@ -63,4 +63,19 @@ label {
     color: black;
     font-weight: 600; }
 
+.search {
+  position: relative; }
+  .search__results {
+    background: white;
+    position: absolute;
+    width: 100%; }
+  .search__input {
+    background: none;
+    color: white;
+    outline: 0; }
+  .search__result {
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #ececec; }
+
 /*# sourceMappingURL=style.css.map*/
