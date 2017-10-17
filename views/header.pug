@@ -20,6 +20,10 @@ body
                     a.link.white.dim.f5(href='/register') Register
                 else
                     a.link.white.dim.f5.mr4(href='/add') Add
+                    a.link.white.dim.f5.mr4(href='/hearts')
+                        button.heart__button
+                            != h.icon('heart')
+                        span.heart-count #{user.hearts && user.hearts.length}
                     a.link.white.dim.f5.mr4(href='/logout') Log out
                     a(href='/account').black
                         .br-100.bg-yellow.dib.ph3.pt2.pb1
