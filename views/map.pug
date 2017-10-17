@@ -1,0 +1,10 @@
+extends header
+
+block content
+    .inner
+        h2.f2= title.toUpperCase()
+        .map.shadow-2
+            .autocomplete
+                input.autocomplete__input(type='text', placeholder='Search for anything', name='geolocate')
+            #map
+                p Loading Map...

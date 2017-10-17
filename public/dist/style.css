@@ -78,4 +78,16 @@ label {
     display: block;
     border-bottom: 1px solid #ececec; }
 
+.map {
+  padding: 20px;
+  background: white; }
+
+#map {
+  height: 500px; }
+
+.popup {
+  width: 300px; }
+  .popup img {
+    width: 100%; }
+
 /*# sourceMappingURL=style.css.map*/
