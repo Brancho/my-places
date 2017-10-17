@@ -1,5 +1,6 @@
 extends header
 include  mixins/_storeCard
+include  mixins/_pagination
 
 block content
     .inner
@@ -7,3 +8,6 @@ block content
         .flex.flex-wrap.justify-between
             each store in stores
                 +storeCard(store)
+        +pagination(page, pages, count)
+
+

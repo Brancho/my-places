@@ -14,10 +14,6 @@ mixin storeCard(store = {})
                     .store__action
                         a(href=`stores/${store._id}/edit`)
                             != h.icon('pencil')
-                if store.reviews
-                    .store__action
-                        != h.icon('review')
-                        span= store.reviews.length
             img.w-100.h-100.absolute.top-0.left-0.right-0(src=`/uploads/${store.photo || 'store.png'}`)
             h2.title.z-2.ma0.relative.f2
                 a.link.black.pt1(href=`/store/${store.slug}`) #{store.name.toUpperCase()}
