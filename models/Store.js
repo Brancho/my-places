@@ -14,6 +14,10 @@ const storeSchema = new mongoose.Schema({
     trim: true
   },
   tags: [String],
+  created: {
+    type: Date,
+    default: Date.now
+  },
   location: {
     type: {
       type: String,
@@ -32,13 +36,11 @@ const storeSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: 'You must supply an author'
+    required: 'You must supply an author.'
   }
-});
-
-storeSchema.index({
-  name: 'text',
-  description: 'text'
+},{
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
 storeSchema.index({
@@ -66,5 +68,11 @@ storeSchema.statics.getTagsList = function(){
     { $sort: { count: -1 }}
   ])
 };
+
+storeSchema.virtual('reviews', {
+  ref: 'Review',
+  localField: '_id',
+  foreignField: 'store'
+});
 
 module.exports = mongoose.model('Store', storeSchema);
