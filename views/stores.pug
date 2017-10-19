@@ -5,6 +5,9 @@ include  mixins/_pagination
 block content
     .inner
         h2.f2= title.toUpperCase()
+        .search
+            input.search__input(type="text" placeholder="Coffee, beer..." name="search")
+            .search__results
         .flex.flex-wrap.justify-between
             each store in stores
                 +storeCard(store)

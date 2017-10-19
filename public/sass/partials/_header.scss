@@ -1,0 +1,29 @@
+.icon svg{
+  width: 25px;
+  height: 25px;
+}
+.logo{
+  height: 60px;
+}
+
+.menu_item{
+  padding-top: 20px;
+}
+
+.menu_item:hover .menu_text, .menu_item.active .menu_text{
+  border-bottom: 2px solid $blue;
+}
+
+.menu_item:hover svg path, .menu_item.active svg path{
+  fill: $blue;
+}
+
+.side__menu{
+  display: none;
+  width: calc(266.7px + 10vw);
+  height: 100vh;
+  background: $blue;
+  position: absolute;
+  z-index: 5;
+  right: 0;
+}

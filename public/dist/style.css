@@ -238,4 +238,29 @@ label {
       -ms-flex: 1;
           flex: 1; }
 
+.icon svg {
+  width: 25px;
+  height: 25px; }
+
+.logo {
+  height: 60px; }
+
+.menu_item {
+  padding-top: 20px; }
+
+.menu_item:hover .menu_text, .menu_item.active .menu_text {
+  border-bottom: 2px solid #2D51A3; }
+
+.menu_item:hover svg path, .menu_item.active svg path {
+  fill: #2D51A3; }
+
+.side__menu {
+  display: none;
+  width: calc(266.7px + 10vw);
+  height: 100vh;
+  background: #2D51A3;
+  position: absolute;
+  z-index: 5;
+  right: 0; }
+
 /*# sourceMappingURL=style.css.map*/

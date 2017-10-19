@@ -6,31 +6,62 @@ head
     link(rel='stylesheet', href='/dist/style.css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
 body
-    header.bg-dark-gray.pv3
+    header.bg-white.shadow-2
         .inner.flex.justify-between
-            h1.white.f2.ma0.pt2.dib
-                a.link.white(href='/') My Places
-            div.pt3
-                a.link.white.dim.f5.mr4(href='/stores') Stores
-                a.link.white.dim.f5.mr4(href='/tags') Tags
-                a.link.white.dim.f5(href='/map') Map
-            div(class=`${!user ? 'pt3' : ''}`)
-                if !user
-                    a.link.white.dim.f5.mr4(href='/login') Login
-                    a.link.white.dim.f5(href='/register') Register
-                else
-                    a.link.white.dim.f5.mr4(href='/add') Add
-                    a.link.white.dim.f5.mr4(href='/hearts')
-                        button.heart__button
-                            != h.icon('heart')
-                        span.heart-count #{user.hearts && user.hearts.length}
-                    a.link.white.dim.f5.mr4(href='/logout') Log out
-                    a(href='/account').black
-                        .br-100.bg-yellow.dib.ph3.pt2.pb1
-                            span.f3.b= user.name.slice(0,1).toUpperCase()
-        .search
-            input.search__input(type="text" placeholder="Coffee, beer..." name="search")
-            .search__results
+            h1.f2.ma0.pt2.dib
+                a.link.white(href='/')
+                    img.logo.mt3(src='/images/logo.png')
+            div.br.bl.b--light-gray
+                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item(href='/stores', class= title == 'Places' ? 'active' : '')
+                    span.icon
+                        != h.icon('cutlery')
+                    span.black.f5.db.mt2.fw1.menu_text Places
+                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item(href='/tags', class= title == 'Tags' ? 'active' : '')
+                    span.icon
+                        != h.icon('hashtag')
+                    span.black.f5.db.mt2.fw1.menu_text Tags
+                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item(href='/map', class= title == 'Map' ? 'active' : '')
+                    span.icon
+                        != h.icon('map')
+                    span.black.f5.db.mt2.fw1.menu_text Map
+                a.ph3.dib.h-100.link.tc.menu_item.open_menu(href='#')
+                    span.icon
+                        != h.icon('menu')
+                    span.black.f5.db.mt2.fw1.menu_text Menu
+    .side__menu.white.fw1
+        .bb.b--white.pv4.ph3
+            if user
+                p.ma0.f5 Hi, #{user.name}! :)
+            else
+                p.ma0.pb3.f5 Hi, visitor! :)
+                p.ma0.f5 Log in or make an account so you can save your favorite places and make your own.
+
+        if user
+            a.bb.b--white.pv3.ph3.db.link.white(href='/add')
+                span.icon.v-mid.dib.mr3
+                    != h.icon('plus')
+                span.f5 Add a place
+            a.bb.b--white.pv3.ph3.db.link.white(href='/hearts')
+                span.icon.v-mid.dib.mr3
+                    != h.icon('like')
+                span.f5 Favorite places
+            a.bb.b--white.pv3.ph3.db.link.white(href='/account')
+                span.icon.v-mid.dib.mr3
+                    != h.icon('edit')
+                span.f5 Edit Account
+            a.bb.b--white.pv3.ph3.db.link.white(href='/logout')
+                span.icon.v-mid.dib.mr3
+                    != h.icon('exit')
+                span.f5 Log out
+        else
+            a.bb.b--white.pv3.ph3.db.link.white(href='/login')
+                span.icon.v-mid.dib.mr3
+                    != h.icon('login')
+                span.f5 Log in
+            a.bb.b--white.pv3.ph3.db.link.white(href='/register')
+                span.icon.v-mid.dib.mr3
+                    != h.icon('register')
+                span.f5 Register
 
     block messages
         if locals.flashes
@@ -48,4 +79,5 @@ body
 
     block scripts
         script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
+        script(src=`https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js`)
         script(src="/dist/App.bundle.js")
