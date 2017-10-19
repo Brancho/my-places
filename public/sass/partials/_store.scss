@@ -1,5 +1,4 @@
 .store__hero{
-
   img{
     object-fit: cover;
   }
@@ -11,19 +10,26 @@
     width: 100%;
     top: 0;
     right: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
     z-index: 1;
   }
 }
 
-.store__hero.main{
-  height: 50vh;
+.store__card{
+  width: 33.33333%;
+
 }
 
-.store__action {
-  font-size: 10px;
-  svg {
-    width: 25px;
-    fill: white
+
+.store__card--description{
+  background: rgba(0,0,0,0.6);
+  height: 100px;
+}
+
+.store__card--title{
+  a {
+    background-color: $blue;
   }
 }
+
+

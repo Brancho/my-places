@@ -4,11 +4,13 @@
     background: white;
     position: absolute;
     width: 100%;
+    z-index: 4;
   }
   &__input {
-    background: none;
-    color: white;
+    color: black;
     outline: 0;
+    background: url('/images/search.svg') no-repeat scroll 1px;
+    padding-left: 35px !important;
   }
   &__result {
     padding: 10px;

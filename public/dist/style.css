@@ -3,12 +3,6 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px; }
 
-.title a {
-  background-color: #FFC40E; }
-
-.title_main {
-  top: 25vh; }
-
 .inner {
   max-width: 1200px;
   width: 80vw;
@@ -25,22 +19,24 @@ body {
   width: 100%;
   top: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1; }
 
-.store__hero.main {
-  height: 50vh; }
+.store__card {
+  width: 33.33333%; }
 
-.store__action {
-  font-size: 10px; }
-  .store__action svg {
-    width: 25px;
-    fill: white; }
+.store__card--description {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100px; }
+
+.store__card--title a {
+  background-color: #2D51A3; }
 
 input:not([type='file']), textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid grey; }
+  border: 0;
+  border-bottom: 1px solid #eee; }
   input:not([type='file']).input--error, textarea.input--error {
     border-color: red; }
 
@@ -69,11 +65,13 @@ label {
   .search__results {
     background: white;
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    z-index: 4; }
   .search__input {
-    background: none;
-    color: white;
-    outline: 0; }
+    color: black;
+    outline: 0;
+    background: url("/images/search.svg") no-repeat scroll 1px;
+    padding-left: 35px !important; }
   .search__result {
     padding: 10px;
     display: block;
@@ -262,5 +260,9 @@ label {
   position: absolute;
   z-index: 5;
   right: 0; }
+
+@media only screen and (min-width: 1500px) {
+  .side__menu {
+    width: calc((100vw - 1200px) / 2 + 266.7px); } }
 
 /*# sourceMappingURL=style.css.map*/
