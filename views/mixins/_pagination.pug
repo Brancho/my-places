@@ -1,10 +1,14 @@
 mixin pagination(page, pages, count)
-    .pagination
-        .pagination__prev
+    .inner
+        .pagination__prev.tc.dib.f5.mv4
             if page > 1
-                a(href=`/stores/page/${page - 1}`) Prev
-        .pagination__text
+                a(href=`/stores/page/${page - 1}`).link.black Previous
+            else
+                span.gray.link Previous
+        .pagination__text.tc.dib.f5
             p Page #{page} of #{pages} - #{count} total results
-        .pagination__next
+        .pagination__next.tc.dib.f5
             if page < pages
-                a(href=`/stores/page/${parseFloat(page) + 1}`) Next
+                a(href=`/stores/page/${parseFloat(page) + 1}`).link.black Next
+            else
+                span.gray.link Next

@@ -20,7 +20,7 @@
 
 .side__menu{
   display: none;
-  width: calc(266.7px + 10vw);
+  width: calc(266.7px + 5vw);
   height: 100vh;
   background: $blue;
   position: absolute;
@@ -30,8 +30,8 @@
 
 
 
-@media only screen and (min-width: 1500px)  {
+@media only screen and (min-width: 1400px)  {
   .side__menu{
-    width: calc((100vw - 1200px) / 2 + 266.7px);
+    width: calc((100vw - 1400px) / 2 + 266.7px);
   }
 }

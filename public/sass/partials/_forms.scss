@@ -9,29 +9,3 @@ input:not([type='file']), textarea {
     }
   }
 }
-
-label {
-  padding: 10px 0;
-  display: block;
-}
-
-.form {
-  background: white;
-  padding: 2rem;
-  & + .form {
-    margin-top: 4rem;
-  }
-
-  h2 {
-    margin: 0;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid grey;
-  }
-  .button {
-    border: 0;
-    background: $yellow;
-    color: black;
-    font-weight: 600;
-  }
-}

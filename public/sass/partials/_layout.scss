@@ -1,5 +1,9 @@
 .inner{
-  max-width: 1200px;
-  width: 80vw;
+  max-width: 1400px;
+  width: 90vw;
   margin: 0 auto;
+}
+
+.pagination__prev, .pagination__text, .pagination__next{
+  width: 33.3333333%;
 }

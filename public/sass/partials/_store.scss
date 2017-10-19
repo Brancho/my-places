@@ -1,28 +1,20 @@
-.store__hero{
-  img{
-    object-fit: cover;
-  }
-&:before {
-    display: block;
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    background: rgba(0,0,0,0.3);
-    z-index: 1;
-  }
-}
-
 .store__card{
+ // border: 1px solid black;
   width: 33.33333%;
-
+  height: 300px;
+  overflow: hidden;
+  img{
+    transition: all 1s;
+  }
+  &:hover img{
+    transform: scale(1.1);
+  }
 }
-
 
 .store__card--description{
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.8);
+  //background-color: white;
+  //color: black;
   height: 100px;
 }
 

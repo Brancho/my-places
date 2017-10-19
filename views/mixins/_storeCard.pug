@@ -1,11 +1,16 @@
 mixin storeCard(store = {})
 
-    .store__card
-        .store__hero.relative
-            img.w-100.h-100.absolute.top-0.left-0.right-0(src=`/uploads/${store.photo || 'store.png'}`)
+    .store__card.relative
+        img.h-100.w-100(src=`/uploads/${store.photo || 'store.png'}`)
+        .absolute.left-0.bottom-0
             h2.store__card--title.z-2.ma0.relative.f3.ml3.pt6
                 a.link.black.pt1.white.fw4(href=`/store/${store.slug}`) #{store.name.toUpperCase()}
             .pa3.z-2.relative.white.store__card--description.fw1
                 - const text = store.description.split(' ')
                 p.f5.ma0.di= text.slice(0, 25).join(' ')
                 span.f5= store.description.split(' ').length > 25 ? '...' : ''
+
+
+
+
+
