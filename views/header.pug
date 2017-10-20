@@ -65,11 +65,11 @@ body
 
     block messages
         if locals.flashes
-            .flash-messages
+            .flash-messages.z-5
                 - const categories = Object.keys(locals.flashes)
                 each category in categories
                     each message in flashes[category]
-                        .f5.mv3.ba.pa3.w-100.shadow-2(class=`flash--${category}`)
+                        .f5.mv3.ba.pa3.w-100(class=`flash--${category}`)
                             p.dib.ma0!= message
                             button.fr.flash--close(onClick="this.parentElement.remove()") &times;
 

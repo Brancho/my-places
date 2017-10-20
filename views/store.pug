@@ -13,7 +13,9 @@ block content
         p.f5.fw1= store.description
         if store.tags
             each tag in store.tags
-                a.mr4.link.f5.br3.ba.pa2.mv2.dib.tag.black.b--blue(href=`/tags/${tag}`) ##{tag}
+                a.mr3.link.f5.br3.pa2.mv2.dib.tag.black(href=`/tags/${tag}`)
+                    span.b #
+                    span.fw1.f4 #{tag}
         if user
             +reviewForm(store)
         if store.reviews

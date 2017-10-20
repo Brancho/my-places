@@ -33,6 +33,15 @@
   }
 }
 
+.tag{
+  background-color: whitesmoke;
+  color: $blue;
+  &:hover{
+    background-color: $blue;
+    color: white;
+  }
+}
+
 
 @media only screen and (max-width: 1200px)  {
   .store__card{

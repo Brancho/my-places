@@ -31,6 +31,7 @@ function loadPlaces(map, lat = 44.7866, lng = 20.4489){
       const description = $('.place__info--description');
       const location = $('.place__info--location');
       const image = $('.place__info--image');
+      const placeholder = $('.placeholder__text');
       if(location.text() == ''){
         location.after('<hr>');
       }
@@ -39,6 +40,8 @@ function loadPlaces(map, lat = 44.7866, lng = 20.4489){
         this.place.description = this.place.description.slice(0, 400) + '...'
       }
 
+
+      placeholder.css('display', 'none');
       title.text(this.place.name);
       title.attr('href', `/store/${this.place.slug}`);
       location.text(this.place.location.address);

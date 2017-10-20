@@ -8,6 +8,11 @@ input:not([type='file']), textarea {
     }
   }
 }
+
+input[type="text"]:not(.search__input), input[type="email"]{
+  box-shadow: 0 0 0 30px white inset;
+}
+
 label{
   color: $blue;
 }

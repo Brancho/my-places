@@ -2,13 +2,13 @@ extends header
 
 block content
     .inner
-        h2.f2= title.toUpperCase()
-        .autocomplete
-            input.autocomplete__input.f5.fw1.black.w-100.pb2.mb4.mv2(type='text', placeholder='Search for anything', name='geolocate')
+        .autocomplete.mt5.mb3
+            input.autocomplete__input.f5.fw1.black.w-100.pb2.mb4.mv2(type='text', placeholder='Search for cities, streets..', name='geolocate')
         .map
             #map.w-70.dib
                 p Loading Map...
             .dib.w-30.bg-light-gray.map__aside.v-top.pa4.pt2
+                p.placeholder__text.f5.fw1 Click on a place to see the details...
                 h1.place__info--title
                     a(href='#').link.black.place__info--title.pointer
                 p.place__info--location.f6.fw1
