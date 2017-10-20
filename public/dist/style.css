@@ -19,8 +19,8 @@ body {
   width: 33.3333333%; }
 
 .store__card {
-  width: 33.33333%;
-  height: 300px;
+  width: 32%;
+  height: 400px;
   overflow: hidden; }
   .store__card img {
     transition: all 1s; }
@@ -28,8 +28,11 @@ body {
     -ms-transform: scale(1.1);
         transform: scale(1.1); }
 
+.store__card--hero {
+  height: 300px; }
+
 .store__card--description {
-  background: rgba(0, 0, 0, 0.8);
+  background-color: whitesmoke;
   height: 100px; }
 
 .store__card--title a {

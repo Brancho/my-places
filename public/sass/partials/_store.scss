@@ -1,6 +1,6 @@
 .store__card{
-  width: 33.33333%;
-  height: 300px;
+  width: 32%;
+  height: 400px;
   overflow: hidden;
   img{
     transition: all 1s;
@@ -10,8 +10,12 @@
   }
 }
 
+.store__card--hero{
+  height: 300px;
+}
+
 .store__card--description{
-  background: rgba(0,0,0,0.8);
+  background-color: whitesmoke;
   height: 100px;
 }
 
