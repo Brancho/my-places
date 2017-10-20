@@ -6,7 +6,7 @@ block content
     .store__hero.relative
         .store__hero--overlay.z-2.w-100.h-100.absolute.tc
             if user
-                form.heart.z-5(action=`/api/stores/${store._id}/heart` method='POST')
+                form.heart.z-5.mt3(action=`/api/stores/${store._id}/heart` method='POST')
                     - const heartStrings = user.hearts.map(obj => obj.toString() )
                     - const heartClass = heartStrings.includes(store._id.toString()) ? 'heart__button--hearted' : ''
                     button.heart__button(type='submit' name='heart', class=heartClass)
@@ -15,6 +15,10 @@ block content
         img.hero.w-100.h-100.absolute(src=`/uploads/${store.photo || 'store.png'}`)
     .inner.pt4
         .bb.b--light-gray.pb4.mb4
+            if user && store.author.equals(user._id)
+                a.edit__icon.db.link.mb3(href=`${store._id}/edit`)
+                    != h.icon('pencil')
+                    span.f5.black Edit your place
             .dib.w-50.pr4
                 p.f5.fw1.ma0= store.description
                 if store.tags

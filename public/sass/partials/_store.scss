@@ -32,9 +32,14 @@
     object-fit: cover;
   }
   .store__title{
-    margin-top: 13%;
+    margin-top: 9%;
     background-color: $blue;
   }
+}
+
+.edit__icon svg{
+  width: 25px;
+  height: 25px;
 }
 
 .tag{

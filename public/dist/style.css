@@ -45,8 +45,12 @@ body {
   .store__hero img {
     object-fit: cover; }
   .store__hero .store__title {
-    margin-top: 13%;
+    margin-top: 9%;
     background-color: #2D51A3; }
+
+.edit__icon svg {
+  width: 25px;
+  height: 25px; }
 
 .tag {
   background-color: whitesmoke;
@@ -126,9 +130,10 @@ label {
     font-size: 20px;
     position: absolute;
     opacity: 0;
-    top: 0; }
+    top: 0;
+    z-index: 10; }
   .heart__button svg {
-    width: 25px;
+    width: 35px;
     fill: white; }
   .heart__button--hearted svg {
     fill: red; }

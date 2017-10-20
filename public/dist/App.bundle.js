@@ -970,7 +970,6 @@ function ajaxHeart(e) {
   e.preventDefault();
   _axios2.default.post(this.action).then(function (res) {
     var isHearted = _this.heart.classList.toggle('heart__button--hearted');
-    document.getElementsByClassName('heart-count')[0].innerHTML = res.data.hearts.length;
     if (isHearted) {
       _this.heart.classList.add('heart__button--float');
       setTimeout(function () {

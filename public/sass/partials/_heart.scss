@@ -10,9 +10,10 @@
       position: absolute;
       opacity: 0;
       top: 0;
+      z-index: 10;
     }
     svg {
-      width: 25px;
+      width: 35px;
       fill: white;
     }
     &--hearted {
