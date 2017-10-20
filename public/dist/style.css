@@ -35,6 +35,16 @@ body {
 .store__card--title a {
   background-color: #2D51A3; }
 
+.store__hero {
+  height: 60vh; }
+  .store__hero .store__hero--overlay {
+    background-color: rgba(0, 0, 0, 0.5); }
+  .store__hero img {
+    object-fit: cover; }
+  .store__hero .store__title {
+    margin-top: 13%;
+    background-color: #2D51A3; }
+
 @media only screen and (max-width: 1200px) {
   .store__card {
     width: 50%; } }

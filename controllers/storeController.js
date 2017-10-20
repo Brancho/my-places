@@ -30,7 +30,7 @@ exports.resize = async (req, res, next) => {
 };
 
 exports.addStore = (req, res) => {
-  res.render('editStore', { title: 'ADD STORE' })
+  res.render('editStore', { title: 'ADD PLACE' })
 };
 
 exports.createStore = async (req, res) => {
@@ -92,8 +92,8 @@ exports.getStoresByTag = async (req, res) => {
   const tag = req.params.tag;
 
   const tagsPromise = Store.getTagsList();
-  const tagQuery = tag || { $exists: true };
-  const storesPromise = Store.find({ tags: tagQuery });
+  // const tagQuery = tag || { $exists: true };
+  const storesPromise = Store.find({ tags: tag });
   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
   res.render('tags', {tags, tag, stores, title: 'Tags'});
 };

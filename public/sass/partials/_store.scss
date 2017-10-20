@@ -1,5 +1,4 @@
 .store__card{
- // border: 1px solid black;
   width: 33.33333%;
   height: 300px;
   overflow: hidden;
@@ -13,16 +12,27 @@
 
 .store__card--description{
   background: rgba(0,0,0,0.8);
-  //background-color: white;
-  //color: black;
   height: 100px;
 }
 
-.store__card--title{
-  a {
+.store__card--title a {
+    background-color: $blue;
+  }
+
+.store__hero{
+  height: 60vh;
+  .store__hero--overlay{
+    background-color: rgba(0,0,0,0.5);
+  }
+  img{
+    object-fit: cover;
+  }
+  .store__title{
+    margin-top: 13%;
     background-color: $blue;
   }
 }
+
 
 @media only screen and (max-width: 1200px)  {
   .store__card{
