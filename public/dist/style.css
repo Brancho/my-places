@@ -62,7 +62,7 @@ body {
 @media only screen and (max-width: 750px) {
   .store__card {
     width: 90%;
-    margin: 0 auto; } }
+    margin: 0 auto 15px auto; } }
 
 input:not([type='file']), textarea {
   border: 0;
@@ -313,7 +313,7 @@ label {
   border: none;
   outline: none; }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1500px) {
   .side__menu, .flash-messages {
     width: calc((100vw - 1400px) / 2 + 266.7px); } }
 

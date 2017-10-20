@@ -5,17 +5,27 @@ include  mixins/_review
 block content
     .store__hero.relative
         .store__hero--overlay.z-2.w-100.h-100.absolute.tc
+            if user
+                form.heart.z-5(action=`/api/stores/${store._id}/heart` method='POST')
+                    - const heartStrings = user.hearts.map(obj => obj.toString() )
+                    - const heartClass = heartStrings.includes(store._id.toString()) ? 'heart__button--hearted' : ''
+                    button.heart__button(type='submit' name='heart', class=heartClass)
+                        != h.icon('heart')
             h2.tc.f1.z-5.store__title.white.dib.pt2.ph2= store.name.toUpperCase()
         img.hero.w-100.h-100.absolute(src=`/uploads/${store.photo || 'store.png'}`)
-    .inner
-        img(src=h.staticMap(store.location.coordinates))
-        p.f5.fw1= store.location.address
-        p.f5.fw1= store.description
-        if store.tags
-            each tag in store.tags
-                a.mr3.link.f5.br3.pa2.mv2.dib.tag.black(href=`/tags/${tag}`)
-                    span.b #
-                    span.fw1.f4 #{tag}
+    .inner.pt4
+        .bb.b--light-gray.pb4.mb4
+            .dib.w-50.pr4
+                p.f5.fw1.ma0= store.description
+                if store.tags
+                    each tag in store.tags
+                        a.mr3.link.f5.br3.pa2.mv2.dib.tag.black(href=`/tags/${tag}`)
+                            span.b #
+                            span.fw1.f4 #{tag}
+            .dib.w-50.v-top.shadow-4
+                img(src=h.staticMap(store.location.coordinates))
+                p.f5.ma0.fw1.pa2= store.location.address
+
         if user
             +reviewForm(store)
         if store.reviews
