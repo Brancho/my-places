@@ -1,17 +1,17 @@
 mixin storeForm(store = {})
-        form.form.shadow-2.mb4(action=`/add/${store._id || ''}`, method='POST' enctype='multipart/form-data')
+        form.form.shadow-2.pa4.mv4(action=`/add/${store._id || ''}`, method='POST' enctype='multipart/form-data')
             label(for='name') Name
-            input(type='text', name='name' value=store.name)
+            input.f5.fw1.black.w-100.pb2.mb4.mt2(type='text', name='name' value=store.name)
             label(for='address') Address
-            input( type='text', id='address' name='location[address]' value=(store.location && store.location.address) )
+            input.f5.fw1.black.w-100.pb2.mb4.mt2( type='text', id='address' name='location[address]' value=(store.location && store.location.address) )
             input( type='hidden', id='lng' name='location[coordinates][0]' value=(store.location && store.location.coordinates[0]) required)
             input( type='hidden', id='lat' name='location[coordinates][1]' value=(store.location && store.location.coordinates[0]) required)
             label(for='description') Description
-            textarea(name='description')= store.description
+            textarea.f5.fw1.black.w-100.pb2.mb4.mt2(name='description')= store.description
             label(for='tags') Tags
             - const tags = store.tags ? store.tags.join(', ') : ''
-            input(type='text', name='tags', placeholder='Burgers, beer, lunch...' value=tags)
+            input.f5.fw1.black.w-100.pb2.mb4.mt2(type='text', name='tags', placeholder='Burgers, beer, lunch...' value=tags)
             input.mt3(type='file', name='photo', id='photo', accept='image/gif, image/png, image/jpeg')
             if store.photo
                 img.mt3(src=`/uploads/${store.photo}`, alt=store.name width=300)
-            input.button.mt3.pointer(type='submit', value='Save')
+            input.button.white.pv2.w-100.mt3.pointer.f5(type='submit', value='Save')
