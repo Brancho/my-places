@@ -28,10 +28,26 @@
   right: 0;
 }
 
+.flash-messages{
+  width: calc(266.7px + 5vw);
+  float: right;
+}
+
+.flash--success, .flash--error {
+  border: 5px solid $blue;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.flash--close{
+  background: none;
+  border: none;
+  outline: none;
+}
 
 
 @media only screen and (min-width: 1400px)  {
-  .side__menu{
+  .side__menu, .flash-messages{
     width: calc((100vw - 1400px) / 2 + 266.7px);
   }
 }

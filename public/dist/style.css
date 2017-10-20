@@ -3,6 +3,13 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px; }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  margin: 0 0 70px; }
+
 .inner {
   max-width: 1400px;
   width: 90vw;
@@ -28,13 +35,29 @@ body {
 .store__card--title a {
   background-color: #2D51A3; }
 
+@media only screen and (max-width: 1200px) {
+  .store__card {
+    width: 50%; } }
+
+@media only screen and (max-width: 750px) {
+  .store__card {
+    width: 90%;
+    margin: 0 auto; } }
+
 input:not([type='file']), textarea {
-  width: 100%;
-  padding: 10px;
   border: 0;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #eee;
+  outline: none; }
   input:not([type='file']).input--error, textarea.input--error {
     border-color: red; }
+
+label {
+  color: #2D51A3; }
+
+.button {
+  background-color: #2D51A3;
+  outline: none;
+  border: none; }
 
 .search {
   position: relative; }
@@ -44,8 +67,6 @@ input:not([type='file']), textarea {
     width: 100%;
     z-index: 4; }
   .search__input {
-    color: black;
-    outline: 0;
     background: url("/images/search.svg") no-repeat scroll 1px;
     padding-left: 35px !important; }
   .search__result {
@@ -237,8 +258,22 @@ input:not([type='file']), textarea {
   z-index: 5;
   right: 0; }
 
+.flash-messages {
+  width: calc(266.7px + 5vw);
+  float: right; }
+
+.flash--success, .flash--error {
+  border: 5px solid #2D51A3;
+  border-right: none;
+  border-radius: 10px 0 0 10px; }
+
+.flash--close {
+  background: none;
+  border: none;
+  outline: none; }
+
 @media only screen and (min-width: 1400px) {
-  .side__menu {
+  .side__menu, .flash-messages {
     width: calc((100vw - 1400px) / 2 + 266.7px); } }
 
 /*# sourceMappingURL=style.css.map*/

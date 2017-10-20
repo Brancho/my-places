@@ -3,9 +3,9 @@ extends header
 block content
     .inner
         h2.f2 Edit account
-        form.form.shadow-2(action='/account' method='POST')
+        form.form.shadow-2.pa4.mv4(action='/account' method='POST')
             label(for='name') Name
-            input(type='name', name='name' value=user.name)
+            input.f5.fw1.black.w-100.pb2.mb4.mt2(type='name', name='name' value=user.name)
             label(for='email') Email
-            input(type='email', name='email' value=user.email)
-            input.button.mt3.pointer(type='submit', value='Update my account')
+            input.f5.fw1.black.w-100.pb2.mb3.mt2(type='email', name='email' value=user.email)
+            input.white.pv2.w-100.mt3.pointer.button.f5(type='submit', value='Update my account')

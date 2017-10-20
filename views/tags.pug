@@ -3,10 +3,10 @@ include  mixins/_storeCard
 
 block content
     .inner
-        h2.f2 #{tag || 'TAGS'}
+        h2.f2 #{tag ? tag.toUpperCase() : 'TAGS'}
         each t in tags
-            a.mr4(href=`/tags/${t._id}`) ##{t._id}
-                span= ' ' + t.count
+            a.mr4.link.f5.br3.ba.pa2.mv2.dib.tag.black.b--blue(href=`/tags/${t._id}`) ##{t._id}
+
         .flex.flex-wrap.justify-between
             each store in stores
                 +storeCard(store)

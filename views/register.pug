@@ -2,14 +2,14 @@ extends header
 
 block content
     .inner
-        form.form.shadow-2.mt4(action='/register', method='POST')
-            h2 Register
+        form.form.shadow-2.pa4.mv4(action='/register', method='POST')
+            h2 REGISTER
             label(for='name') Name
-            input(type='text', name='name' value=body && body.name)
+            input.f5.fw1.black.w-100.pb2.mb4.mt2(type='text', name='name' value=body && body.name)
             label(for='email') Email
-            input(type='email', name='email' value=body && body.email)
+            input.f5.fw1.black.w-100.pb2.mb4.mt2(type='email', name='email' value=body && body.email)
             label(for='password') Password
-            input(type='password', name='password')
+            input.f5.fw1.black.w-100.pb2.mb4.mt2(type='password', name='password')
             label(for='password-confirm') Confirm Password
-            input(type='password', name='password-confirm')
-            input.button.mt3.pointer(type='submit', value='Register')
+            input.f5.fw1.black.w-100.pb2.mb3.mt2(type='password', name='password-confirm')
+            input.white.pv2.w-100.mt3.pointer.button.f5.fw1(type='submit', value='Register')
