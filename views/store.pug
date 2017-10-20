@@ -9,11 +9,11 @@ block content
         img.hero.w-100.h-100.absolute(src=`/uploads/${store.photo || 'store.png'}`)
     .inner
         img(src=h.staticMap(store.location.coordinates))
-        p= store.location.address
-        p= store.description
+        p.f5.fw1= store.location.address
+        p.f5.fw1= store.description
         if store.tags
             each tag in store.tags
-                a.mr4(href=`/tags/${tag}`) ##{tag}
+                a.mr4.link.f5.br3.ba.pa2.mv2.dib.tag.black.b--blue(href=`/tags/${tag}`) ##{tag}
         if user
             +reviewForm(store)
         if store.reviews

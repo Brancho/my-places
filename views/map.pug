@@ -3,8 +3,14 @@ extends header
 block content
     .inner
         h2.f2= title.toUpperCase()
-        .map.shadow-2
-            .autocomplete
-                input.autocomplete__input.f5.fw1.black.w-100.pb2.mb4.mv2(type='text', placeholder='Search for anything', name='geolocate')
-            #map
+        .autocomplete
+            input.autocomplete__input.f5.fw1.black.w-100.pb2.mb4.mv2(type='text', placeholder='Search for anything', name='geolocate')
+        .map
+            #map.w-70.dib
                 p Loading Map...
+            .dib.w-30.bg-light-gray.map__aside.v-top.pa4.pt2
+                h1.place__info--title
+                    a(href='#').link.black.place__info--title.pointer
+                p.place__info--location.f6.fw1
+                p.place__info--description.fw1.f6
+                img.place__info--image.w-100.h-70.dn(src=`/uploads/store.png`)

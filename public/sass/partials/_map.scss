@@ -1,11 +1,19 @@
-.map {
-  padding: 20px;
-  background: white;
-}
-#map {
+
+#map, .map__aside {
   height: 500px;
+  background-color: whitesmoke;
 }
 
+.place__info--image{
+  max-height: 230px;
+}
+.place__info--title{
+  color: $blue;
+  text-transform: uppercase;
+}
+.map__place__title{
+  margin:0;
+}
 .popup {
   width: 300px;
   img {

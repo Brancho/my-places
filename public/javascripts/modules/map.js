@@ -20,19 +20,33 @@ function loadPlaces(map, lat = 44.7866, lng = 20.4489){
       const [placeLng, placeLat] = place.location.coordinates;
       const position = { lat: placeLat, lng: placeLng};
       bounds.extend(position);
-      const marker = new google.maps.Marker({ map, position })
+      const marker = new google.maps.Marker({ map, position });
       marker.place = place;
       return marker;
     });
 
 
     markers.forEach(marker => marker.addListener('click', function(){
-      const html = `<div class="popup">
-                        <a href="/store/${this.place.slug}">
-                            <img src="/uploads/${this.place.photo || 'store.png'}" alt="${this.place.name}" />
-                            <p>${this.place.name} - ${this.place.location.address}</p>
-                         </a>
-                    </div>`;
+      const title = $('.place__info--title');
+      const description = $('.place__info--description');
+      const location = $('.place__info--location');
+      const image = $('.place__info--image');
+      if(location.text() == ''){
+        location.after('<hr>');
+      }
+
+      if(this.place.description.length > 400){
+        this.place.description = this.place.description.slice(0, 400) + '...'
+      }
+
+      title.text(this.place.name);
+      title.attr('href', `/store/${this.place.slug}`);
+      location.text(this.place.location.address);
+      description.text(this.place.description);
+      image.attr('src', `/uploads/${this.place.photo || 'store.png'}`);
+      image.css('display', 'block');
+
+      const html = `<p class="map__place__title">${this.place.name}</p>`;
       infoWindow.setContent(html);
       infoWindow.open(map, this);
     }));

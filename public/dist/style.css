@@ -84,12 +84,19 @@ label {
     display: block;
     border-bottom: 1px solid #ececec; }
 
-.map {
-  padding: 20px;
-  background: white; }
+#map, .map__aside {
+  height: 500px;
+  background-color: whitesmoke; }
 
-#map {
-  height: 500px; }
+.place__info--image {
+  max-height: 230px; }
+
+.place__info--title {
+  color: #2D51A3;
+  text-transform: uppercase; }
+
+.map__place__title {
+  margin: 0; }
 
 .popup {
   width: 300px; }

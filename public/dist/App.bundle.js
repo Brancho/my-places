@@ -1034,7 +1034,26 @@ function loadPlaces(map) {
 
     markers.forEach(function (marker) {
       return marker.addListener('click', function () {
-        var html = '<div class="popup">\n                        <a href="/store/' + this.place.slug + '">\n                            <img src="/uploads/' + (this.place.photo || 'store.png') + '" alt="' + this.place.name + '" />\n                            <p>' + this.place.name + ' - ' + this.place.location.address + '</p>\n                         </a>\n                    </div>';
+        var title = $('.place__info--title');
+        var description = $('.place__info--description');
+        var location = $('.place__info--location');
+        var image = $('.place__info--image');
+        if (location.text() == '') {
+          location.after('<hr>');
+        }
+
+        if (this.place.description.length > 400) {
+          this.place.description = this.place.description.slice(0, 400) + '...';
+        }
+
+        title.text(this.place.name);
+        title.attr('href', '/store/' + this.place.slug);
+        location.text(this.place.location.address);
+        description.text(this.place.description);
+        image.attr('src', '/uploads/' + (this.place.photo || 'store.png'));
+        image.css('display', 'block');
+
+        var html = '<p class="map__place__title">' + this.place.name + '</p>';
         infoWindow.setContent(html);
         infoWindow.open(map, this);
       });
