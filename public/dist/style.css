@@ -290,12 +290,23 @@ label {
 
 .flash-messages {
   width: calc(266.7px + 5vw);
-  float: right; }
+  position: absolute;
+  right: 0; }
 
 .flash--success, .flash--error {
-  border: 5px solid #2D51A3;
   border-right: none;
-  border-radius: 10px 0 0 10px; }
+  border-radius: 10px 0 0 10px;
+  background-color: whitesmoke; }
+
+.flash--error {
+  border-top: 5px solid red;
+  border-left: 5px solid red;
+  border-bottom: 5px solid red; }
+
+.flash--success {
+  border-top: 5px solid #2D51A3;
+  border-bottom: 5px solid #2D51A3;
+  border-left: 5px solid #2D51A3; }
 
 .flash--close {
   background: none;
