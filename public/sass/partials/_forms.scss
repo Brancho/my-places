@@ -1,4 +1,4 @@
-input:not([type='file']), textarea {
+input:not([type='file']) {
   border: 0;
   border-bottom: 1px solid #eee;
   outline:none;
@@ -13,8 +13,14 @@ input[type="text"]:not(.search__input), input[type="email"]{
   box-shadow: 0 0 0 30px white inset;
 }
 
-label{
+label:not(.star){
   color: $blue;
+}
+
+textarea{
+  border: 1px solid #eee;
+  outline:none;
+  height: 100px;
 }
 
 .button{
