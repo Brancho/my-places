@@ -12,15 +12,15 @@ body
                 a.link.white(href='/')
                     img.logo.mt3(src='/images/logo.png')
             div.br.bl.b--light-gray
-                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item(href='/stores', class= title == 'Places' ? 'active' : '')
+                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item.menu_item__desktop(href='/stores', class= title == 'Places' ? 'active' : '')
                     span.icon
                         != h.icon('cutlery')
                     span.black.f5.db.mt2.fw1.menu_text Places
-                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item(href='/tags', class= title == 'Tags' ? 'active' : '')
+                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item.menu_item__desktop(href='/tags', class= title == 'Tags' ? 'active' : '')
                     span.icon
                         != h.icon('hashtag')
                     span.black.f5.db.mt2.fw1.menu_text Tags
-                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item(href='/map', class= title == 'Map' ? 'active' : '')
+                a.br.b--light-gray.ph3.dib.h-100.link.tc.menu_item.menu_item__desktop(href='/map', class= title == 'Map' ? 'active' : '')
                     span.icon
                         != h.icon('map')
                     span.black.f5.db.mt2.fw1.menu_text Map
@@ -35,7 +35,18 @@ body
             else
                 p.ma0.pb3.f5 Hi, visitor! :)
                 p.ma0.f5 Log in or make an account so you can save your favorite places and make your own.
-
+        a.bb.b--white.pv3.ph3.db.link.white.mobile__menu__item(href='/stores')
+            span.icon.v-mid.dib.mr3
+                != h.icon('cutlery')
+            span.f5 Places
+        a.bb.b--white.pv3.ph3.db.link.white.mobile__menu__item(href='/tags')
+            span.icon.v-mid.dib.mr3
+                != h.icon('hashtag')
+            span.f5 Tags
+        a.bb.b--white.pv3.ph3.db.link.white.mobile__menu__item(href='/map')
+            span.icon.v-mid.dib.mr3
+                != h.icon('map')
+            span.f5 Map
         if user
             a.bb.b--white.pv3.ph3.db.link.white(href='/add')
                 span.icon.v-mid.dib.mr3

@@ -1,5 +1,6 @@
 .store__card{
   width: 32%;
+  margin: 0.5%;
   height: 400px;
   overflow: hidden;
   img{
@@ -52,15 +53,15 @@
 }
 
 
-@media only screen and (max-width: 1200px)  {
+@media only screen and (max-width: 1000px)  {
   .store__card{
-    width: 50%;
+    width: 48%;
   }
 }
 
 @media only screen and (max-width: 750px)  {
   .store__card{
-    width: 90%;
+    width: 100%;
     margin:0 auto 15px auto;
   }
 }

@@ -18,6 +18,10 @@
   fill: $blue;
 }
 
+.mobile__menu__item{
+  display: none;
+}
+
 .side__menu{
   display: none;
   width: calc(266.7px + 5vw);
@@ -62,4 +66,22 @@
   .side__menu, .flash-messages{
     width: calc((100vw - 1400px) / 2 + 266.7px);
   }
+}
+
+@media only screen and (max-width: 750px)  {
+  .mobile__menu__item{
+    display: block;
+    svg path{
+      fill: white;
+    }
+  }
+
+  .side__menu{
+    width: 100vw;
+  }
+
+  .menu_item__desktop{
+    display: none;
+  }
+
 }

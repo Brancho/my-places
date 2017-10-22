@@ -20,6 +20,7 @@ body {
 
 .store__card {
   width: 32%;
+  margin: 0.5%;
   height: 400px;
   overflow: hidden; }
   .store__card img {
@@ -59,13 +60,13 @@ body {
     background-color: #2D51A3;
     color: white; }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .store__card {
-    width: 50%; } }
+    width: 48%; } }
 
 @media only screen and (max-width: 750px) {
   .store__card {
-    width: 90%;
+    width: 100%;
     margin: 0 auto 15px auto; } }
 
 input:not([type='file']) {
@@ -224,6 +225,9 @@ textarea {
 .menu_item:hover svg path, .menu_item.active svg path {
   fill: #2D51A3; }
 
+.mobile__menu__item {
+  display: none; }
+
 .side__menu {
   display: none;
   width: calc(266.7px + 5vw);
@@ -261,5 +265,15 @@ textarea {
 @media only screen and (min-width: 1500px) {
   .side__menu, .flash-messages {
     width: calc((100vw - 1400px) / 2 + 266.7px); } }
+
+@media only screen and (max-width: 750px) {
+  .mobile__menu__item {
+    display: block; }
+    .mobile__menu__item svg path {
+      fill: white; }
+  .side__menu {
+    width: 100vw; }
+  .menu_item__desktop {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map*/
